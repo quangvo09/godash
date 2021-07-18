@@ -1,7 +1,7 @@
 # godash
 
 ### Group by a slice integer
-```
+```go
 import (
   "fmt"
 
@@ -15,12 +15,12 @@ func main() {
 }
 ```
 
-```
+```go
 map[1:[1] 2:[2 2] 3:[3 3] 4:[4 4]]
 ```
 
 ### Group by a slice string
-```
+```go
 import (
   "fmt"
 
@@ -34,12 +34,12 @@ func main() {
 }
 ```
 
-```
+```go
 map[X:[X] Y:[Y Y] Z:[Z Z Z]]
 ```
 
 ### Group by a slice of struct
-```
+```go
 import (
   "fmt"
 
@@ -67,6 +67,6 @@ func main() {
 }
 ```
 
-```
+```go
 map[1:[{A 1} {B 1}] 2:[{C 2} {D 2}]]
 ```
