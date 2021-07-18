@@ -2,7 +2,7 @@ package group_by
 
 import "reflect"
 
-func SliceStable(in interface{}, groupKey func(obj interface{}) interface{}) map[interface{}][]interface{} {
+func SliceStable(in interface{}, groupKey func(index int) interface{}) map[interface{}][]interface{} {
 	slice, ok := convertSlice(in)
 	if !ok {
 		panic("The input should be a slice")
@@ -10,8 +10,8 @@ func SliceStable(in interface{}, groupKey func(obj interface{}) interface{}) map
 
 	output := make(map[interface{}][]interface{})
 
-	for _, v := range slice {
-		key := groupKey(v)
+	for i, v := range slice {
+		key := groupKey(i)
 		if value, ok := output[key]; ok {
 			output[key] = append(value, v)
 		} else {

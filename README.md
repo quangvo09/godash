@@ -59,10 +59,10 @@ func main() {
     Student{"D", 2},
   }
 
-  output := group_by.SliceStable(intput, func(student interface{}) interface{} {
-    return student.(Student).Age
+  output := group_by.SliceStable(intput, func(index int) interface{} {
+    return intput[index].Age
   })
-  
+
   fmt.Println(output)
 }
 ```
