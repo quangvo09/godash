@@ -4,7 +4,7 @@ import "testing"
 
 func TestSliceStable(t *testing.T) {
 	input := []string{"Quang", "Pho", "Tuan", "Quan", "Tuan", "Quan", "Pho", "Tuan"}
-	output := SliceStable(input, func(index int) interface{} { return input[index] })
+	output := SliceStable(input, func(obj interface{}) interface{} { return obj })
 	t.Log(output)
 
 	if length := len(output); length != 4 {
