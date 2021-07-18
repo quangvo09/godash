@@ -3,9 +3,9 @@
 ### Group by a slice integer
 ```
 import (
-	"fmt"
+  "fmt"
 
-	group_by "github.com/quangvo09/godash/group_by"
+  group_by "github.com/quangvo09/godash/group_by"
 )
 
 func main() {
@@ -22,9 +22,9 @@ map[1:[1] 2:[2 2] 3:[3 3] 4:[4 4]]
 ### Group by a slice string
 ```
 import (
-	"fmt"
+  "fmt"
 
-	group_by "github.com/quangvo09/godash/group_by"
+  group_by "github.com/quangvo09/godash/group_by"
 )
 
 func main() {
@@ -41,27 +41,28 @@ map[X:[X] Y:[Y Y] Z:[Z Z Z]]
 ### Group by a slice of struct
 ```
 import (
-	"fmt"
+  "fmt"
 
-	group_by "github.com/quangvo09/godash/group_by"
+  group_by "github.com/quangvo09/godash/group_by"
 )
 
 type Student struct {
-	Name string
-	Age  int
+  Name string
+  Age  int
 }
 
 func main() {
   intput := []Student{
-		Student{"A", 1},
-		Student{"B", 1},
-		Student{"C", 2},
-		Student{"D", 2},
-	}
+    Student{"A", 1},
+    Student{"B", 1},
+    Student{"C", 2},
+    Student{"D", 2},
+  }
 
-	output := group_by.SliceStable(intput, func(student interface{}) interface{} {
-		return student.(Student).Age
-	})
+  output := group_by.SliceStable(intput, func(student interface{}) interface{} {
+    return student.(Student).Age
+  })
+  
   fmt.Println(output)
 }
 ```
