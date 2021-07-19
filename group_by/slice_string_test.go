@@ -20,8 +20,8 @@ func TestGroupSliceString(t *testing.T) {
 		"Quan":  {"Quan", "Quan"},
 		"Quang": {"Quang"},
 	}
-	res5 := reflect.DeepEqual(output, group)
-	if !res5 {
+	res := reflect.DeepEqual(output, group)
+	if !res {
 		t.Errorf("Group should be %v", group)
 	}
 }

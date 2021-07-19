@@ -70,3 +70,34 @@ func main() {
 ```go
 map[1:[{A 1} {B 1}] 2:[{C 2} {D 2}]]
 ```
+
+
+### Chunk a slice
+```go
+import (
+  "fmt"
+
+  godash "github.com/quangvo09/godash"
+)
+
+type Student struct {
+  Name string
+  Age  int
+}
+
+func main() {
+  intput := []Student{
+    Student{"A", 1},
+    Student{"B", 1},
+    Student{"C", 2},
+    Student{"D", 2},
+  }
+
+  output := godash.Chunk(intput, 2)
+  fmt.Println(output)
+}
+```
+
+```go
+map[1:[{A 1} {B 1}] 2:[{C 2} {D 2}]]
+```
