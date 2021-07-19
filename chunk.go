@@ -6,17 +6,21 @@ func Chunk(input interface{}, number int) [][]interface{} {
 		panic("The input must be a slice")
 	}
 
+	if number <= 0 {
+		panic("The number must be greater than 0")
+	}
+
 	length := len(slice)
 	output := make([][]interface{}, 0)
 	i := 0
 	j := number
-	for ; j < length; {
+	for j < length {
 		output = append(output, slice[i:j])
 		i = j
 		j = j + number
 	}
 
-	if j != length - 1 {
+	if j != length-1 {
 		output = append(output, slice[i:])
 	}
 
